@@ -1,0 +1,35 @@
+{
+  "name": "generator-gulper",
+  "version": "0.0.3",
+  "description": "Gulp webapp generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "leaky/generator-gulper",
+  "author": {
+    "name": "Matthew Leak",
+    "email": "",
+    "url": "https://github.com/leaky"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator, gulp, web, app, front-end, node"
+  ],
+  "dependencies": {
+    "yeoman-generator": "~0.16.0",
+    "chalk": "~0.4.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}

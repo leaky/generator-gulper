@@ -1,0 +1,28 @@
+body {
+	font-family: "Helvetica", Arial, Sans-Serif;
+}
+
+#container {
+
+	width: 250px;
+	height: 350px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -175px;
+	margin-left: -125px;
+	text-align: center;
+
+	p {
+		width: 100%;
+		text-align: center;
+		color: rgb(80,80,80);
+
+		a {
+			color: rgb(180,180,180);
+			text-decoration: none;
+			border-bottom: 1px dotted rgb(160,160,160);
+		}
+	}
+
+}
