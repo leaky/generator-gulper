@@ -54,7 +54,7 @@ app: function () {
 
 	this.copy('./gulp/gulpfile.js','gulpfile.js');
 	this.copy('_package.json', 'package.json');
-	this.copy('_bower.json', 'bower.json');
+	// this.copy('_bower.json', 'bower.json');
 },
 
 projectfiles: function () {
