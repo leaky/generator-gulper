@@ -2,6 +2,7 @@ var gulp 				= require('gulp'),
 	gutil 				= require('gulp-util');
 
 var http 				= require('http'),
+	runSequence			= require('run-sequence'),
 	sass 				= require('gulp-sass'),
 	autoprefixer 		= require('gulp-autoprefixer'),
 	minifycss 			= require('gulp-minify-css'),
@@ -35,7 +36,7 @@ var config = {
 
 // sass task
 gulp.task('styles', function() {
-	gulp.src(config.src_sass)
+	return gulp.src(config.src_sass)
 		.pipe(sass({style:"expanded" }))
 		.pipe(autoprefixer("last 2 version", "safari 5", "ie 7", "ie 8", "ie 9", "opera 12.1", "ios 6", "android 4"))
 		.pipe(gulp.dest(config.dest_css))
@@ -47,7 +48,7 @@ gulp.task('styles', function() {
 
 // concat & minify js
 gulp.task('scripts', function() {
-	gulp.src(config.src_js)
+	return gulp.src(config.src_js)
 		.pipe(jshint(/* ".jshintrc" */))
 		.pipe(jshint.reporter('default'))
 		.pipe(concat(config.js_concat_target))
@@ -60,14 +61,14 @@ gulp.task('scripts', function() {
 
 // minify images
 gulp.task('images', function() {
-	gulp.src(config.src_img)
+	return gulp.src(config.src_img)
 		.pipe(imagemin())
 		.pipe(gulp.dest(config.dest_img))
 });
 
 // watch html & embed lr
 gulp.task('html', function() {
-	gulp.src(config.src_html)
+	return gulp.src(config.src_html)
 		.pipe(embedlr())
 		.pipe(gulp.dest('dist/'))
 		.pipe(livereload(server))
@@ -75,17 +76,18 @@ gulp.task('html', function() {
 
 // clean '.dist/'
 gulp.task('clean', function() {
-	gulp.src(['./dist/**/*.*'], { read: true })
+	return gulp.src(['./dist/**/*.*'], { read: true })
 		.pipe(clean())
 });
 
 gulp.task('open', function() {
-	gulp.src(config.startpage)
+	return gulp.src(config.startpage)
 		.pipe(open(config.startpage, { url: 'http://localhost:'+config.http_port }));
 });
 
 // default task -- run 'gulp' from cli
-gulp.task('default', ['html', 'scripts', 'styles', 'images', 'open', 'clean'], function() {
+gulp.task('default', function(callback) {
+	runSequence('clean', ['scripts', 'styles', 'images', 'html'], 'open', callback);
 	server.listen(config.livereload_port);
 	http.createServer(ecstatic({ root: 'dist/' } )).listen(config.http_port);
 		// gutil.log(gutil.colors.yellow('HTTP Server running on port:'), gutil.colors.red(config.http_port));
