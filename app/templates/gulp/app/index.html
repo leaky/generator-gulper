@@ -6,26 +6,24 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE-edge">
-	<title>Gulper</title>
-	<meta name="description" content="">
+	<title><%= projectName %></title>
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" href="assets/styles/main.css" />
+	<% if (includeModernizr) { %><script src="bower_components/modernizr/modernizr.js"></script><% } %>
 </head>
 <body>
 	
 	<div id="container">
 		<img src="assets/images/gulp.png" width="114" height="257" alt="Gulp" />
-		<p>Gulper v0.0.7</p>
+		<p>Gulper v<%= projectVersion %></p>
 		<p><a href="#">Github</a></p>
 	</div>
 
-	<!-- 
-		all scripts under /scripts are automagically concatinated into: 
-			<script src="assets/scripts/main.js"></script> && <script src="assets/scripts/main.min.js"></script>
-		** [ editable in gulpfile.js ] **	
-	 -->
+	<% if (includejQuery) { %><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><% } %>
 
-	 <script src="assets/scripts/main.js"></script>
+	<!-- // all scripts under /scripts are automagically concatinated into: -->
+	<script src="assets/scripts/main.js"></script>
+	<!-- // end concat -->
 
 </body>
 </html>

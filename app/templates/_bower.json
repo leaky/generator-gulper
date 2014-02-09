@@ -1,6 +1,10 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {}
+  "name": "<%= project_name %>",
+  "private": true,
+  "dependencies": 
+  {
+  	"<% if (includeModernizr) { %> omglol <% } %>".
+    "jquery": "~1.10.2"
+  },
+  "devDependencies": {}
 }
-

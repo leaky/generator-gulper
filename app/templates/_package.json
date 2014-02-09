@@ -1,11 +1,11 @@
 {
-  "name": "<%= proj_name %>",
+  "name": "<%= projectName %>",
   "version": "0.0.1",
-  "description": "<%= proj_name %>",
-  "repository": "<%= proj_repo %>",
+  "description": "<%= projectName %>",
+  "repository": "",
   "devDependencies": {
     "gulp": "~3.5.2",
-    "gulp-rename": "~1.0.0",
+    "gulp-rename": "~1.0.0", 
     "tiny-lr": "0.0.5",
     "gulp-ruby-sass": "~0.3.0",
     "gulp-livereload": "~1.0.1",
