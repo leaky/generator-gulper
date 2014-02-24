@@ -119,7 +119,7 @@ gulp.task('default', function(callback) {
 	server.listen(config.livereload_port);
 	http.createServer(ecstatic({ root: 'dist/' } )).listen(config.http_port);
 	gulp.watch(config.src_sass, ['styles'])._watcher.on('all', livereload);
-	gulp.watch(config.src_js, ['plugins'])._watcher.on('all', livereload);
+	gulp.watch(config.src_plugins, ['plugins'])._watcher.on('all', livereload);
 	gulp.watch(config.src_js, ['scripts'])._watcher.on('all', livereload);
 	gulp.watch(config.src_html, ['html'])._watcher.on('all', livereload);
 	gulp.watch(config.src_img, ['images'])._watcher.on('all', livereload);
