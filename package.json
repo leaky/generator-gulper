@@ -1,6 +1,6 @@
 {
   "name": "generator-gulper",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Gulp webapp generator",
   "license": "MIT",
   "main": "app/index.js",
