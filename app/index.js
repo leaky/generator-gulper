@@ -38,6 +38,10 @@ var GulperGenerator = yeoman.generators.Base.extend({
 				name: 'Bourbon Sass Mixins',
 				value: 'includeBourbon',
 				checked: false
+			},{
+				name: 'Neat Grids Sass Mixins',
+				value: 'includeNeat',
+				checked: false
 			}]
 		},{
 			type: 'input',
@@ -56,6 +60,7 @@ var GulperGenerator = yeoman.generators.Base.extend({
 			this.includeModernizr = hasFeature('includeModernizr');
 			this.includejQuery = hasFeature('includejQuery');
 			this.includeBourbon = hasFeature('includeBourbon');
+			this.includeNeat = hasFeature('includeNeat');
 			this.projectName = answers.projectName;
 			this.projectVersion = currVersion;
 
@@ -82,6 +87,23 @@ var GulperGenerator = yeoman.generators.Base.extend({
 		setTimeout(function() {
 		    console.log('Installing Bourbon');
 		    terminal.stdin.write('bourbon install --path ./app/assets/styles');
+		    terminal.stdin.write('uptime\n');
+		    terminal.stdin.end();
+		}, 1000);
+	};
+
+	if (includeNeat) {		
+		var terminal = require('child_process').spawn('bash');
+		terminal.stdout.on('data', function (data) {
+		    console.log('stdout: ' + data);
+		});
+		terminal.on('exit', function (code) {
+		    console.log('child process exited with code ' + code);
+		});
+		setTimeout(function() {
+		    console.log('Installing Neat');
+		    terminal.stdin.write('neat install');
+		    terminal.stdin.write('mv ./neat/ ./app/assets/styles/neat');
 		    terminal.stdin.write('uptime\n');
 		    terminal.stdin.end();
 		}, 1000);
