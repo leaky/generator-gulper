@@ -2,3 +2,7 @@
 @import "utils";
 @import "layout";
 @import "startpage"; // remove this!
+
+
+// Bourbon
+<% if (includeBourbon) { %>@import "./bourbon/_bourbon.scss";><% } %>
