@@ -34,6 +34,10 @@ var GulperGenerator = yeoman.generators.Base.extend({
 				name: 'jQuery (Google CDN)',
 				value: 'includejQuery',
 				checked: false
+			},{
+				name: 'Bourbon Sass Mixins',
+				value: 'includeBourbon',
+				checked: false
 			}]
 		},{
 			type: 'input',
@@ -51,6 +55,7 @@ var GulperGenerator = yeoman.generators.Base.extend({
 
 			this.includeModernizr = hasFeature('includeModernizr');
 			this.includejQuery = hasFeature('includejQuery');
+			this.includeBourbon = hasFeature('includeBourbon');
 			this.projectName = answers.projectName;
 			this.projectVersion = currVersion;
 
@@ -65,6 +70,22 @@ var GulperGenerator = yeoman.generators.Base.extend({
 	this.mkdir('app/assets/styles');
 	this.mkdir('app/assets/scripts');
 	this.mkdir('app/assets/images');
+
+	if (includeBourbon) {		
+		var terminal = require('child_process').spawn('bash');
+		terminal.stdout.on('data', function (data) {
+		    console.log('stdout: ' + data);
+		});
+		terminal.on('exit', function (code) {
+		    console.log('child process exited with code ' + code);
+		});
+		setTimeout(function() {
+		    console.log('Installing Bourbon');
+		    terminal.stdin.write('bourbon install --path ./app/assets/styles');
+		    terminal.stdin.write('uptime\n');
+		    terminal.stdin.end();
+		}, 1000);
+	};
 
 	this.directory('./gulp/app','app');
 
