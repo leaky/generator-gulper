@@ -2,7 +2,7 @@
 
 The (ultimate) [Yeoman](http://yeoman.io) web app generator to scaffold out a front-end web app using the [Gulp](http://gulpjs.com) task-runner.
 
-This is the ultimate Gulp boilerplate to kick-start your new builds. Check out the list of features of below to see what makes Gulper v2 awesome!
+This is the ultimate Gulp boilerplate to kick-start your new builds. Check out the list of features below to see what makes Gulper v2 awesome!
 
 ## Features
 * Angular
