@@ -1,29 +1,71 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE-edge">
-	<title><%= projectName %></title>
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" href="assets/styles/main.css" />
-	<% if (includeModernizr) { %><script src="bower_components/modernizr/modernizr.js"></script><% } %>
-</head>
-<body>
-	
-	<div id="container">
-		<img src="assets/images/gulp.png" width="114" height="257" alt="Gulp" />
-		<p>Gulper v<%= projectVersion %></p>
-		<p><a href="https://github.com/leaky/generator-gulper">Github</a></p>
-	</div>
+<!DOCTYPE html>
 
-	<% if (includejQuery) { %><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><% } %>
+<!--[if lt IE 7]><html lang="en-GB" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-GB" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-GB" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en-GB" class="no-js" ng-app="app"><!--<![endif]-->
 
-	<!-- // all scripts under /scripts are automagically concatinated into: -->
-	<script src="assets/scripts/main.js"></script>
-	<!-- // end concat -->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		
+		<title>Gulper 2.0</title>
+		
+		<link rel="stylesheet" href="/assets/styles/main.css" />
+	</head>
 
-</body>
+	<body ng-cloak>
+		
+		<!-- start-page -->
+		
+		<div class="start-page" ng-controller="StartController">
+
+			<div class="branding">
+				<img src="assets/images/gulp.png" width="57" height="129" alt="Gulp" />
+				<p>
+					{{name}}
+					<a href="https://github.com/leaky/generator-gulper/" target="_blank">Github</a>
+				</p>
+			</div>
+			<ul class="dependencies">
+				<li ng-repeat="dependency in dependencies">
+					<a href="{{dependency.href}}" target="_blank">
+						{{dependency.name}}
+					</a>
+				</li>
+			</ul>
+			<div class="get-started">
+				<h1>Get started</h1>
+				<p>Awesome, you're using Gulper! To get started with a totally blank template, follow the below instructions to strip out everything relating to the start page.</p>
+				<ul>
+					<li>
+						<h2>CSS <span>./app/assets/styles/</span></h2>
+						<p>a) <strong>main.scss</strong> - remove <code>@import "startpage";</code></p>
+						<p>b) delete <strong>_startpage.scss</strong></p>
+					</li>
+					<li>
+						<h2>Images <span>./app/assets/images/</span></h2>
+						<p>a) delete <strong>gulp.png</strong></p>
+					</li>
+					<li>
+						<h2>Javascript <span>./app/assets/scripts/</span></h2>
+						<p>a) <strong>app.js</strong> - remove <code>require('./start-page');</code></p>
+						<p>b) delete <strong>start-page.js</strong></p>
+						<p>c) delete <strong>/controllers/controller.js</strong></p>
+					</li>
+					<li>
+						<h2>HTML <span>./app/index.html</span></h2>
+						<p>a) delete everything inside <code>&lt;!-- start-page --&gt; ... &lt;!-- /start-page --&gt;</code></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- /start-page -->
+
+		<script src="assets/scripts/app.js"></script>
+		
+	</body>
+
 </html>

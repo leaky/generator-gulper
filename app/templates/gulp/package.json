@@ -1,0 +1,61 @@
+{
+  "name": "<%= projectName %>",
+  "version": "1.0.0",
+  "description": "<%= projectName %>",
+  "scripts": {
+    "install": "napa"
+  },
+  "napa": {
+    "angular": "angular/bower-angular",
+    "angular-route": "angular/bower-angular-route"
+  },
+  "browser": {
+    "underscore": "backbone/node_modules/underscore"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "coffeeify",
+      "hbsfy"
+    ]
+  },
+  "browserify-shim": {
+    "plugin": {
+      "exports": "plugin",
+      "depends": [
+        "jquery:$"
+      ]
+    }
+  },
+  "devDependencies": {
+    "browser-sync": "~0.8.2",
+    "browserify-shim": "~3.4.1",
+    "browserify": "~3.36.0",
+    "coffeeify": "~0.6.0",
+    "connect": "~2.13.0",
+    "gulp-autoprefixer": "latest",
+    "gulp-changed": "~0.3.0",
+    "gulp-compass": "~1.1.8",
+    "gulp-connect": "latest",
+    "gulp-imagemin": "~0.6.1",
+    "gulp-livereload": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-notify": "~1.2.4",
+    "gulp-open": "~0.2.8",
+    "gulp-zip": "latest",
+    "gulp": "latest",
+    "hbsfy": "latest",
+    "jquery": "~1.11.1",
+    "imagemin-pngcrush": "latest",
+    "napa": "~0.4.1",
+    "rimraf": "latest",
+    "vinyl-source-stream": "~0.1.1",
+    "watchify": "~0.10.1",
+    "gulp-util": "~2.2.14",
+    "pretty-hrtime": "~0.2.1"
+  },
+  "dependencies": {
+    "jquery": "~2.1.0"
+  }
+}
+

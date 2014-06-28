@@ -1,7 +1,7 @@
 {
   "name": "generator-gulper",
-  "version": "1.0.1",
-  "description": "Gulp webapp generator",
+  "version": "2.0.0",
+  "description": "The ultimate Gulp webapp generator",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "leaky/generator-gulper",
@@ -20,7 +20,7 @@
     "app"
   ],
   "keywords": [
-    "yeoman-generator", "gulp", "web", "app", "front-end", "node"
+    "yeoman-generator", "gulp", "web", "app", "front-end", "node", "angular", "angular-routes", "autoprefixer", "browserify", "browserify shim", "browsersync", "coffeescript", "compass", "handlebars", "livereload", "minify", "notify", "sass", "scss", "watchify", "jquery"
   ],
   "dependencies": {
     "yeoman-generator": "~0.16.0",
