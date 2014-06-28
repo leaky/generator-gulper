@@ -4,7 +4,6 @@
 (Ultimate) [Yeoman](http://yeoman.io) web app generator to scaffold out a front-end web app using the [Gulp](http://gulpjs.com) task-runner.
 
 This is the ultimate Gulp boilerplate to kick-start your new builds. Check out the list of features of below to see what makes Gulper v2 awesome!
----
 
 ## Features
 * Angular
@@ -23,13 +22,11 @@ This is the ultimate Gulp boilerplate to kick-start your new builds. Check out t
 * Notify
 * SASS
 * Watchify
----
 
 ## Tasks
 *TLDR;* To add new Gulp tasks just simply create a new task file in `~/gulp/tasks`.
 
 Rather than managing one giant gulpfile.js that's responsible for creating multiple tasks, each task has been broken out into their own tasks in `~/gulp/tasks`. Any file in that folder gets automatically required by the loop in `~gulp/index.js`.
----
 
 ## Getting Started
 
@@ -50,16 +47,13 @@ Serve web app:
 ```
 $ gulp
 ```
----
 
 ## Build
 To build out your project ready for deployment, run `grunt build` from the root of your project. This will create an archive containing your site files in `~/_build`.
----
 
 
 ## Contribution
 Contribution is welcomed as are feature requests.
----
 
 ## License
 MIT
