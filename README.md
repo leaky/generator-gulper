@@ -1,5 +1,4 @@
-# Web app generator with GulpJS
----
+# Gulp web app generator
 
 (Ultimate) [Yeoman](http://yeoman.io) web app generator to scaffold out a front-end web app using the [Gulp](http://gulpjs.com) task-runner.
 
