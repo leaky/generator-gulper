@@ -1,8 +1,10 @@
 # Gulp web app generator
 
+*New* - Now in version 2.
+
 The (ultimate) [Yeoman](http://yeoman.io) web app generator to scaffold out a front-end web app using the [Gulp](http://gulpjs.com) task-runner.
 
-This is the ultimate Gulp boilerplate to kick-start your new builds. Check out the list of features below to see what makes Gulper v2 awesome!
+This is the ultimate Gulp boilerplate to kick-start your new builds. This generator has been completely rebuilt and rethought from the ground up with the primary objective to tackle the most common problems that occur in an average front-enders' day. Check out the list of features below to see what makes Gulper v2 awesome!
 
 ## Features
 * Angular
@@ -48,7 +50,7 @@ $ gulp
 ```
 
 ## Build
-To build out your project ready for deployment, run `grunt build` from the root of your project. This will create an archive containing your site files in `~/_build`.
+To build out your project ready for deployment, run `gulp deploy` from the root of your project. This will create an archive containing your site files in `~/_deploy`.
 
 
 ## Contribution

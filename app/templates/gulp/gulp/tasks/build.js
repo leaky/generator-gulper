@@ -1,11 +1,9 @@
 
 /* Build Task
    ---------------
-   Run `gulp build` from the CLI to build your project
-   Builds the project and compresses the `_site` directory into a ready-to-upload .zip file
+   Creates an initial build of the site when the Watch task is first ran.
 */
 
-var zip			= require('gulp-zip');
-var gulp 		= require('gulp');
+var gulp = require('gulp');
 
 gulp.task('build', ['browserify', 'compass', 'images', 'html']);
