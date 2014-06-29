@@ -1,6 +1,6 @@
 # Gulp web app generator
 
-*New* - Now in version 2.
+**New** - Now in version 2.
 
 The (ultimate) [Yeoman](http://yeoman.io) web app generator to scaffold out a front-end web app using the [Gulp](http://gulpjs.com) task-runner.
 
